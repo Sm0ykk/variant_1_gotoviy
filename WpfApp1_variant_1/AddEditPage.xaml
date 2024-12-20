@@ -1,0 +1,32 @@
+﻿<Page x:Class="WpfApp1_variant_1.AddEditPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1_variant_1"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddEditPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="259*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Название"></TextBlock>
+        <TextBlock Text="Остаток на складе" Grid.Row="1"></TextBlock>
+        <TextBlock x:Name="text_min" Text="Минимально количество" Grid.Row="2" ></TextBlock>
+        <TextBox Text="{Binding Name}" MaxLength="100" Height="60" Grid.Column="1" VerticalAlignment="Top"></TextBox>
+        <TextBox Text="{Binding Count}" Grid.Column="1" Grid.Row="1" Width="175" Height="60" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBox>
+        <TextBox Text="{Binding MinCount}" x:Name="mincount" Grid.Column="1" Grid.Row="2" Width="175" Height="60" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Visible"></TextBox>
+
+        <Button Content="Сохранить" Grid.Row="3" Grid.Column="1" Name="BtnSave" Click="BtnSave_Click" Width="175" Height="60" VerticalAlignment="Top" />
+
+    </Grid>
+</Page>
